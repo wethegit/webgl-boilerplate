@@ -2,7 +2,7 @@ import { compileShader } from "./compileShader";
 
 const createProgram = (gl, vertexSrc, fragmentSrc) => {
   const v = compileShader(gl, vertexSrc, gl.VERTEX_SHADER);
-  const f = compileShader(gl, vertexSrc, gl.FRAGMENT_SHADER);
+  const f = compileShader(gl, fragmentSrc, gl.FRAGMENT_SHADER);
 
   const program = gl.createProgram();
   gl.attachShader(program, v);
@@ -10,12 +10,12 @@ const createProgram = (gl, vertexSrc, fragmentSrc) => {
   gl.linkProgram(program);
 
   // Error logging
-  if(!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
     const progLog = gl.getProgramInfoLog(program);
     throw new Error(progLog);
   }
 
   return program;
-}
+};
 
 export { createProgram };
