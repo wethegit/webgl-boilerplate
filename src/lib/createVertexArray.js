@@ -29,7 +29,7 @@ const createVertexArray = (gl, program, attributes) => {
 
     if(data && !buffer) buffer = createBuffer(gl, data);
 
-    gl.bindAttributeLocation(program, i, names[i]);
+    gl.bindAttribLocation(program, i, names[i]);
     gl.enableVertexAttribArray(i);
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
     gl.vertexAttribPointer(i, size, type, normalize, stride, offset);

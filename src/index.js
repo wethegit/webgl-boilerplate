@@ -51,3 +51,5 @@ const play = (delta) => {
   scene.render();
 }
 requestAnimationFrame(play);
+
+resize();

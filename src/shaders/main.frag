@@ -13,5 +13,5 @@ vec2 getScreenSpace() {
 }
 
 void main() {
-  color = vec2(1,0,0,1);
+  color = vec4(1,0,0,1);
 }
