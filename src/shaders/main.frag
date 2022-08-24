@@ -13,5 +13,9 @@ vec2 getScreenSpace() {
 }
 
 void main() {
-  color = vec4(1,0,0,1);
+  vec2 uv = getScreenSpace();
+  float field = length(uv);
+  float circle = step(0.0, field-.25);
+
+  color = vec4(vec3(circle),1);
 }
